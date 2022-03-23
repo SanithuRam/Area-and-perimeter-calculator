@@ -1,73 +1,121 @@
-               #---------------------MAIN------------------#
 import math
-print("choose the shape you want to calculate area and perimeter")
-rectangle=(input("Enter 'yes' if it is a rectangle or square  :"))
-triangle=(input("Enter 'yes' if it is a triangle :")) 
-circle=(input("Enter 'yes' if it is a circle: "))
-paralgram=(input("Enter 'yes' if it is a parallelogram:"))
-#https://stackoverflow.com/questions/517970/how-to-clear-the-interpreter-console
 def clear():
   print("\033[H\033[J", end="")
-#___________code to get area and perimeter of a rectangle_________________#
-#https://www.code4example.cm/python/python-program-to-calculate-area-and-perimeter-of-rectangle/
+
+#code to find area and perimter of square
+def square():
+  l = float(input("Side of the Square :"))
+  def area_1():
+   area = l* l
+   print("Area of the Square : ", area)
+
+  def perimeter_1():
+   perimeter=4*l
+   print("Perimeter of the square:",perimeter)
+  
+  
+#code to find area and perimeter of rectangle
 def rectangle():
- if rectangle== 'yes ' :
-  clear()
-  print("Calculating Area and Perimeter of a Rectangle-------------PLEASE ENTER LENGHT AND WIDTH OF THE RECTANGLE")
-  l=int(input("Length : "))
-  w=int(input("Width : "))
-  area=l*w
-  perimeter=2*(l+w)
-  print("Area of Rectangle : ",area)
-  print("Perimeter of Rectangle : ",perimeter)
+  length = float(input("Input the length of the Rectangle:  "))
+  breath =float(input("Input the breadth of the Rectangle: "))
+  def area_2():
+    area_rectangle = length * breath
+    print("Area of the Rectangle : ", area_rectangle)
+  def perimeter_2():
+    perimeter=2*( length + breath)
+    print("Perimeter of the Rectangle : ", perimeter)
 
-  
-
-#----Code to find the area of a Triangle-------
-#https://www.code4example.com/python/python-program-to-calculate-area-and-perimeter-of-triangle/
+#code to find area and perimter of triangle
 def triangle():
-  if triangle== 'yes' :
-     clear()
-     print("Calculating Area and Perimeter of a Triangle-------------PLEASE ENTER HEIGHT AND BASE OF THE TRIANGLE")
+  def area_3():
+   height = float(input("Input the Value of the Height:")) 
+   base = float(input("Input the base of the triangle :"))
+   area_triangle= 0.5 * height * base
+   print("Area of the Triangle : ", area_triangle)
+  def perimeter_3():
+    s1= float(input("Input the lenght of the side 1 of a triangle:"))
+    s2= float(input("Input the lenght of the side 2 of a triangle:"))
+    s3= float(input("Input the lenght of the side 3 of a triangle:"))
+    perimeter_triangle=s1+s2+s3
+    print("Area of the Rectangle : ", perimeter_triangle)
+
+#code to find area and circumference of a circle
+def circle():
+  radius = float(input("Input the Radius of The Circle :"))
+  def area_4():
+    areacircle =math.pi * radius * radius
+    print("Area of the Circle : ", areacircle)
+  def circumference_4():
+    circumference =2*math.pi * radius
+    print("circumference of the Circle : ", circumference)
+
   
-     s1 = float(input("Enter the first side of the triangle : "))
-     s2 = float(input("Enter the second side of the triangle : "))
-     s3 = float(input("Enter the third side of the triangle : "))     
-  
-     b= float(input("Enter the base of the triangle:"))
-     h= float(input("Enter the height of the triangle:"))
-     perimeter= (s1 + s2 + s3)
-     area = 0.5 * b * h
-     print("The perimeter of the triangle is : {0:.2f}".format(perimeter))
-     print("The area of the triangle is : {0:.2f}".format(area))
 
 
-#____________code to fing area of the Circle______________
+#code to find area and perimter of a paralleolgram
+def parallelgrom():
+   def area_5():
+     height = float (input("Input the height of the parallelogram:"))
+     base=float (input("Input the base of the parallelogram:"))
+     area=height*base
+     print("Area of the Parallelogram is:",(area))
+   def perimeter_5(): 
+     s1=float(input("Enter the lenght of one identical sides of the  Parallelogram:"))
+     s2=float(input("Enter the lenght of one identical sides of the  Parallelogram:"))
+     perimeter= 2*(s1+s2)
+     print("Perimeter of the Parallelogram is :",(perimeter))
 
-  def circle():
-   if circle == 'yes':
-    clear()
-    print("Calculating area and perimeter of a circle ------------PLEASE ENTER THE RADIUS OF THE CIRCLE")
-    radius= float(input("Enter the radius of the circle:"))
-    area=math.pi*radius*radius
-    perimeter=2*3.14*radius
-    print("Area of Circle: ",(area))
-    print("Perimeter of Circle: ",(perimeter))
+#code for user inputs
+print(" [ square, circle, triangle, rectangle,parallelogram ] ")
+choice = str(input("What you want to Find?   "))
+
+print(" [area or perimeter/circumference]")
+choise_2 =str(input("????-"))
+clear()
    
+#loop for shape chooser and choice_2(are a and perimeter)
+if choice == "square":
+  square()
+  if  choice_2 == "area":
+      area_1()
+  else:
+    choice_2 == "perimeter":
+    perimeter_1()
+
+elif choice == "rectangle":
+  rectangle()
+  if choice_2 == " area":
+    area_2()
+  else:
+    choice_2=="perimeter":
+    perimeter_2()
   
-  #-----Code to find area of a Parallelogram------
-        
-    def paralgram():
-        if paralgram == 'yes':
-          clear()
-          print("Calculating area and perimeter of a parallelogram ------------PLEASE ENTER THE HEIGHT AND BASE OF THE PARALLELOGRAM")
-          height=float(input("Enter the Height of the parallelogram:"))
-          base=float(input("Enter the Base of thr parallelogram:"))
-          s1=float(input("Enter the lenght of one identical sides of the  Parallelogram:"))
-          s2=float(input("Enter the lenght of one identical sides of the  Parallelogram:"))
-          area=height*base
-          perimeter= 2*(s1+s2)
-          print("Area of the Parallelogram is:",(area))
-          print("Perimeter of the Parallelogram is :",(perimeter))
-         
-       
+
+elif choice == "triangle":
+  triangle()
+  if  choice_2 == " area":
+    area_3()
+  else:
+    choice_2=="perimeter":
+    perimeter_3()
+  
+
+elif choice == "circle" :
+  circle()
+  if  choice_2 == " area":
+    area_4()
+  else:
+    choice_2=="perimeter":
+    circumference_4()
+
+elif choice == "parallelogram" :
+  parallelgrom()
+  if choice_2 == " area":
+    area_5()
+  else:
+    choice_2=="perimeter":
+    perimeter_5()
+
+
+else:
+   
